@@ -441,16 +441,16 @@ outline: none;
       })
       .then(response => response.json())
       .then(data => {
-      	window.location.href = "thank/index.html";
+      	dataSent();
       })
       .catch((error) => {
-      	window.location.href = "thank/index.html";
+      	dataSent();
       });
               });
           });
           
           function dataSent() {
-              window.location.href = "thank/index.html";
+              window.location.href = "../thank/index.html";
           }
   </script>
   <script>
