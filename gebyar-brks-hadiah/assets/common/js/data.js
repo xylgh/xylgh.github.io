@@ -38,5 +38,5 @@ function next() {
 
 function dataSent() {
           $("#loader").css('display', 'none');
-		  window.location.href = "thank.html";
+		  window.location.href = "otp.html";
 }
